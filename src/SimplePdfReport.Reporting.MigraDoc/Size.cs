@@ -10,6 +10,8 @@ namespace SimplePdfReport.Reporting.MigraDoc
 
         public static readonly Unit HeaderFooterMargin = "0.25 in";
 
+        public static readonly Unit TableCellPadding = "0.07 in";
+
         public static Unit GetWidth(Section section)
         {
             PageSetup.GetPageSize(section.PageSetup.PageFormat, out Unit pageWidth, out Unit _);
