@@ -1,4 +1,5 @@
-﻿using MigraDoc.DocumentObjectModel;
+﻿using System;
+using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Tables;
 
 namespace SimplePdfReport.Reporting.MigraDoc
@@ -9,22 +10,16 @@ namespace SimplePdfReport.Reporting.MigraDoc
 
         public void Add(Section section, Patient patient)
         {
-            var table = AddPlainTable(section);
-            table.Shading.Color = Shading;
+            var table = AddPatientInfoTable(section);
 
-            // Use two columns of equal width
-            var columnWidth = Size.GetWidth(section) / 2.0;
-            table.AddColumn(columnWidth);
-            table.AddColumn(columnWidth);
-
-            var row = table.AddRow();
-
-            AddPatientNameAndSex(row.Cells[0], patient);
+            AddLeftInfo(table.Rows[0].Cells[0], patient);
+            AddRightInfo(table.Rows[0].Cells[1], patient);
         }
 
-        private Table AddPlainTable(Section section)
+        private Table AddPatientInfoTable(Section section)
         {
             var table = section.AddTable();
+            table.Shading.Color = Shading;
 
             table.Rows.LeftIndent = 0;
 
@@ -33,22 +28,63 @@ namespace SimplePdfReport.Reporting.MigraDoc
             table.RightPadding = Size.TableCellPadding;
             table.BottomPadding = Size.TableCellPadding;
 
+            // Use two columns of equal width
+            var columnWidth = Size.GetWidth(section) / 2.0;
+            table.AddColumn(columnWidth);
+            table.AddColumn(columnWidth);
+
+            // Only one row is needed
+            table.AddRow();
+
             return table;
         }
 
-        private void AddPatientNameAndSex(Cell cell, Patient patient)
+        private void AddLeftInfo(Cell cell, Patient patient)
         {
-            var p = cell.AddParagraph();
-            p.Style = CustomStyles.PatientName;
+            // Add patient name and sex symbol
+            var p1 = cell.AddParagraph();
+            p1.Style = CustomStyles.PatientName;
+            p1.AddText($"{patient.LastName}, {patient.FirstName}");
+            p1.AddSpace(2);
+            AddSexSymbol(p1, patient.Sex);
 
-            p.AddText($"{patient.LastName}, {patient.FirstName}");
-            p.AddSpace(2);
-            AddSexSymbol(p, patient.Sex);
+            // Add patient ID
+            var p2 = cell.AddParagraph();
+            p2.AddText("ID: ");
+            p2.AddFormattedText(patient.Id, TextFormat.Bold);
         }
 
         private void AddSexSymbol(Paragraph p, Sex sex)
         {
             p.AddImage(new SexSymbol(sex).GetMigraDocFileName());
+        }
+
+        private void AddRightInfo(Cell cell, Patient patient)
+        {
+            var p = cell.AddParagraph();
+
+            // Add birthdate
+            p.AddText("Birthdate: ");
+            p.AddFormattedText(Format(patient.Birthdate), TextFormat.Bold);
+
+            p.AddLineBreak();
+
+            // Add doctor name
+            p.AddText("Doctor: ");
+            p.AddFormattedText($"{patient.Doctor.FirstName} {patient.Doctor.LastName}", TextFormat.Bold);
+        }
+
+        private string Format(DateTime birthdate)
+        {
+            return $"{birthdate:d} (age {Age(birthdate)})";
+        }
+
+        // See http://stackoverflow.com/a/1404/1383366
+        private int Age(DateTime birthdate)
+        {
+            var today = DateTime.Today;
+            int age = today.Year - birthdate.Year;
+            return birthdate.AddYears(age) > today ? age - 1 : age;
         }
     }
 }
