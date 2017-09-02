@@ -50,6 +50,8 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HeaderAndFooterPart.cs" />
+    <Compile Include="Size.cs" />
     <Compile Include="ReportPdf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
