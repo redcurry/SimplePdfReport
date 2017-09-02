@@ -1,5 +1,6 @@
 ﻿using MigraDoc.DocumentObjectModel;
 using MigraDoc.Rendering;
+using SimplePdfReport.Reporting.MigraDoc.Internal;
 
 namespace SimplePdfReport.Reporting.MigraDoc
 {
@@ -66,6 +67,7 @@ namespace SimplePdfReport.Reporting.MigraDoc
 
         private void AddStructureSet(Section section, StructureSet structureSet)
         {
+            new StructureSetContent().Add(section, structureSet);
         }
     }
 }

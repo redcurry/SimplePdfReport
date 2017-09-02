@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace SimplePdfReport.Reporting.MigraDoc
+namespace SimplePdfReport.Reporting.MigraDoc.Internal
 {
     internal class SexSymbol
     {

@@ -2,7 +2,7 @@
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Tables;
 
-namespace SimplePdfReport.Reporting.MigraDoc
+namespace SimplePdfReport.Reporting.MigraDoc.Internal
 {
     internal class PatientInfo
     {

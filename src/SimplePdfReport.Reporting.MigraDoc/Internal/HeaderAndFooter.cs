@@ -1,7 +1,7 @@
 ﻿using System;
 using MigraDoc.DocumentObjectModel;
 
-namespace SimplePdfReport.Reporting.MigraDoc
+namespace SimplePdfReport.Reporting.MigraDoc.Internal
 {
     internal class HeaderAndFooter
     {
