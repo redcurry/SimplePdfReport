@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdfReport.Reporting", "src\SimplePdfReport.Reporting\SimplePdfReport.Reporting.csproj", "{9BB0CE8D-91C4-4E54-9AFA-EB8D9797E8EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdfReport.Test", "src\SimplePdfReport.Test\SimplePdfReport.Test.csproj", "{A199F180-E232-4497-B77E-0D850A0E6ABE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9BB0CE8D-91C4-4E54-9AFA-EB8D9797E8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BB0CE8D-91C4-4E54-9AFA-EB8D9797E8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BB0CE8D-91C4-4E54-9AFA-EB8D9797E8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
