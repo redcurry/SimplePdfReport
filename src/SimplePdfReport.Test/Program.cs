@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using SimplePdfReport.Reporting;
+using SimplePdfReport.Reporting.MigraDoc;
 
 namespace SimplePdfReport.Test
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
+            var reportService = new ReportPdf();
             var reportData = CreateReportData();
+
+            var path = GetTempPdfPath();
+            reportService.Export(path, reportData);
+
+            Process.Start(path);
         }
 
         private static ReportData CreateReportData()
@@ -82,6 +91,11 @@ namespace SimplePdfReport.Test
                     }
                 }
             };
+        }
+
+        private static string GetTempPdfPath()
+        {
+            return Path.GetTempFileName() + ".pdf";
         }
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdfReport.Reporting",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdfReport.Test", "src\SimplePdfReport.Test\SimplePdfReport.Test.csproj", "{A199F180-E232-4497-B77E-0D850A0E6ABE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePdfReport.Reporting.MigraDoc", "src\SimplePdfReport.Reporting.MigraDoc\SimplePdfReport.Reporting.MigraDoc.csproj", "{C455FEC6-526D-4CC8-BF35-2B23137EF215}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A199F180-E232-4497-B77E-0D850A0E6ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C455FEC6-526D-4CC8-BF35-2B23137EF215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C455FEC6-526D-4CC8-BF35-2B23137EF215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C455FEC6-526D-4CC8-BF35-2B23137EF215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C455FEC6-526D-4CC8-BF35-2B23137EF215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

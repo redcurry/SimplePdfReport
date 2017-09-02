@@ -43,6 +43,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimplePdfReport.Reporting.MigraDoc\SimplePdfReport.Reporting.MigraDoc.csproj">
+      <Project>{C455FEC6-526D-4CC8-BF35-2B23137EF215}</Project>
+      <Name>SimplePdfReport.Reporting.MigraDoc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimplePdfReport.Reporting\SimplePdfReport.Reporting.csproj">
       <Project>{9bb0ce8d-91c4-4e54-9afa-eb8d9797e8ea}</Project>
       <Name>SimplePdfReport.Reporting</Name>
